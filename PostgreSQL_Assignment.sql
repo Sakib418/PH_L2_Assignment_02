@@ -1,8 +1,8 @@
 -- Active: 1748457571027@@127.0.0.1@5432@conservation_db@public
---Database creation
+
 CREATE DATABASE conservation_db;
 
---Create rangers table
+
 CREATE TABLE rangers (
     ranger_id SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
@@ -17,7 +17,7 @@ INSERT INTO rangers (name, region) VALUES
 ('Carol King', 'Mountain Range');
 
 
---Create species table.
+
 CREATE TABLE species (
     species_id SERIAL PRIMARY KEY,
     common_name VARCHAR(100) NOT NULL,
@@ -34,7 +34,7 @@ INSERT INTO species (common_name, scientific_name, discovery_date, conservation_
 ('Asiatic Elephant', 'Elephas maximus indicus', '1758-01-01', 'Endangered');
 
 
---Create sightings table. 
+
 CREATE TABLE sightings (
     sighting_id SERIAL PRIMARY KEY,
     species_id INT NOT NULL REFERENCES species(species_id),
